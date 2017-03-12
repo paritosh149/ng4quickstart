@@ -1,10 +1,14 @@
-<div *ngIf="hero">
+<md-card *ngIf="hero">
 <h2>{{hero.name}} details!</h2>
-<div>
-    <label>Id: </label>{{hero.id}}
-</div>
-<div>
-    <label>Name: </label><input [(ngModel)]="hero.name" placeholder="name">
-</div>
-<button (click)="goBack()">Back</button>
-</div>
+<form>
+<md-input-container>
+  <input mdInput placeholder="Id" name="id" value="{{hero.id}}" disabled>
+</md-input-container>
+<br>
+<md-input-container>
+  <input mdInput placeholder="Name" name="name" [(ngModel)]="hero.name">
+</md-input-container>
+<br>
+<button md-raised-button (click)="goBack()">Back</button>
+</form>
+</md-card>

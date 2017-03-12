@@ -1,6 +1,13 @@
-  <h1>{{title}}</h1>
-  <nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+  <md-progress-bar *ngIf="inProgress" color="warn" mode="indeterminate"></md-progress-bar>
+  <md-toolbar color="primary">
+    <button md-icon-button>
+      <md-icon>home
+      </md-icon>
+    </button>
+    {{title}}
+  </md-toolbar>
+  <nav md-tab-nav-bar>
+    <a md-tab-link routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a md-tab-link routerLink="/heroes" routerLinkActive="active" >Heroes</a>
   </nav>
   <router-outlet></router-outlet>

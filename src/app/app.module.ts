@@ -9,14 +9,32 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { AppComponent } from './components/app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroService } from './services/hero.service';
-
+import { MaterialModule } from '@angular/material';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
+import { HeroDialog } from './components/hero-dialog/hero-dialog.component';
+import 'hammerjs';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryDataService) ],
-  declarations: [ HeroesComponent, HeroDetailComponent, AppComponent, DashboardComponent ],
-  bootstrap:    [ AppComponent ],
+  imports:      [ BrowserModule, 
+                  FormsModule, 
+                  AppRoutingModule, 
+                  HttpModule, 
+                  InMemoryWebApiModule.forRoot(InMemoryDataService),
+                  MaterialModule.forRoot(),
+                ],
+  declarations: [ HeroesComponent, 
+                  HeroDetailComponent, 
+                  AppComponent, 
+                  DashboardComponent,
+                  HeroDialog
+                ],
+  bootstrap:    [ AppComponent,
+                  
+                ],
   providers:    [ HeroService ],
+  entryComponents: [
+                  HeroDialog
+                ],
 })
 export class AppModule { }

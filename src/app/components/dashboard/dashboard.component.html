@@ -1,8 +1,10 @@
-<h3>Top heroes</h3>
-<div class="grid grid-pad">
-    <a *ngFor="let hero of heroes" class="col-1-4" [routerLink]="['/detail', hero.id]">
-        <div class="module hero">
-            <h4>{{hero.name}}</h4>
-        </div>
-    </a> 
-</div>
+<md-card>
+    <md-card-title>Top Heroes</md-card-title>
+<md-card-content>
+    <md-tab-group>
+    <md-tab label="{{hero.name}}" *ngFor="let hero of heroes" color="primary" [routerLink]="['/detail', hero.id]">
+        <my-hero-detail [hero]="hero"></my-hero-detail>
+    </md-tab> 
+    </md-tab-group>
+</md-card-content>
+</md-card>

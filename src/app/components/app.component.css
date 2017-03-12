@@ -2,6 +2,8 @@ h1 {
   font-size: 1.2em;
   color: #999;
   margin-bottom: 0;
+      -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
 }
 h2 {
   font-size: 2em;
