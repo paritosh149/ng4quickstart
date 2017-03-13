@@ -16,6 +16,8 @@ import 'rxjs/add/operator/switchMap';
 export class HeroDetailComponent implements OnInit {
     @Input()
     hero: Hero;
+    @Input()
+    isDisabled: boolean;
     constructor(private heroService: HeroService,
                 private route: ActivatedRoute,
                 private location: Location ) {}

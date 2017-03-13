@@ -18,9 +18,11 @@ export class DashboardComponent implements OnInit {
     ngOnInit(): void {
         let appComp = this.injector.get(AppComponent) as AppComponent
         appComp.inProgress = true;
-        this.heroService.getHeroes().then((heroes) => {
-        this.heroes = heroes.slice(0, 5);
-        appComp.inProgress=false;
-    });
+            this.heroService.getHeroes().then((heroes: Hero[]) => {
+            setTimeout(()=> {
+                this.heroes = heroes.slice(0, 5);
+                appComp.inProgress=false;
+            }, 2000);
+        });
     }
 }

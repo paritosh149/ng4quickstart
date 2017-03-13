@@ -3,7 +3,7 @@
 <md-card-content>
     <md-tab-group>
     <md-tab label="{{hero.name}}" *ngFor="let hero of heroes" color="primary" [routerLink]="['/detail', hero.id]">
-        <my-hero-detail [hero]="hero"></my-hero-detail>
+        <my-hero-detail [hero]="hero" [isDisabled]="true"></my-hero-detail>
     </md-tab> 
     </md-tab-group>
 </md-card-content>

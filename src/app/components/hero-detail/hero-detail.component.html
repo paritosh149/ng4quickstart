@@ -6,9 +6,9 @@
 </md-input-container>
 <br>
 <md-input-container>
-  <input mdInput placeholder="Name" name="name" [(ngModel)]="hero.name">
+  <input mdInput placeholder="Name" name="name" [(ngModel)]="hero.name" [disabled]="isDisabled?true:null">
 </md-input-container>
 <br>
-<button md-raised-button (click)="goBack()" color="accent">Back</button>
+<button md-raised-button (click)="goBack()" color="accent" *ngIf="!isDisabled">Back</button>
 </form>
 </md-card>
