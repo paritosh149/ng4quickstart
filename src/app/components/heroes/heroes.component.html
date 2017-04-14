@@ -1,16 +1,15 @@
 <md-card>
     <md-card-title>My Heroes</md-card-title>
 <md-card-content>
-  <md-list>
-    <md-list-item *ngFor="let hero of heroes">
-      <md-chip-list class="mat-chip-list-stacked">
+      <md-chip-list *ngFor="let hero of heroes" class="mat-chip-list-wrapper">
       <md-chip color="primary" selected="true">
        {{hero.id}}</md-chip>
-       <md-chip color="" [selected]="hero === selectedHero" (click)="openDialog(hero)">&nbsp;
-        {{hero.name}}
-    </md-chip>
+       <md-chip color="primary" [selected]="hero === selectedHero" (click)="openDialog(hero)">
+         {{hero.name}}</md-chip>
+        <!--<md-chip color="primary">
+            <span md-line color="primary">{{hero.id}}</span>
+            <span md-line>{{hero.name}}</span>
+        </md-chip>-->
       </md-chip-list>
-    </md-list-item>
-  </md-list>
 </md-card-content>
 </md-card>

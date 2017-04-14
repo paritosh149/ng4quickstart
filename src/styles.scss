@@ -1,26 +1,71 @@
 /* Master Styles */
-@import 'node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+//@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import '~@angular/material/theming';
 
-//@include mat-core();
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define a theme.
+$primary: mat-palette($mat-deep-purple);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+
+// NOTE: Theming is currently experimental and not yet publically released!
+
+
+// $primary: md-palette($mat-deep-purple);
+// $accent:  md-palette($md-amber, A200, A100, A400);
+
+// $theme: md-light-theme($primary, $accent);
+
+// @include angular-material-theme($theme);
+
+// .m2app-dark {
+//   $dark-primary: md-palette($md-pink, 700, 500, 900);
+//   $dark-accent:  md-palette($md-blue-grey, A200, A100, A400);
+//   $dark-warn:    md-palette($md-deep-orange);
+
+//   $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+//   @include angular-material-theme($dark-theme);
+// }
+
+// @include mat-core();
 
 body {
-  margin: 0px; }
+  margin: 0px; 
+}
 
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%; }
+  font-size: 250%; 
+}
 
 h2, h3 {
   color: #444;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter; }
+  font-weight: lighter; 
+}
 
 body, input[text], button {
   color: #888;
-  font-family: Cambria, Georgia; }
+  font-family: Cambria, Georgia;
+}
 
 /* . . . */
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.progress-bar {
+  position: fixed !important;
+  top: 0px;
+}

@@ -42,7 +42,7 @@ export class HeroesComponent implements OnInit {
     let config = new MdDialogConfig();
     config.data = this.selectedHero;
     let dialogRef = this.dialog.open(HeroDialog, config);
-    //dialogRef.componentInstance.hero = this.selectedHero;
+    dialogRef.componentInstance.hero = this.selectedHero;
     dialogRef.afterClosed().subscribe(result => {
       if(result==='details')
         this.gotoDetails();

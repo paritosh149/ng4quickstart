@@ -9,11 +9,13 @@ import { Hero } from '../../models/hero';
     providers: [MdDialogConfig]
 })
 export class HeroDialog implements OnInit{
+    @Input()
     hero: Hero;
-    constructor(public dialogRef: MdDialogRef<HeroDialog>, config: MdDialogConfig){
+    constructor(public dialogRef: MdDialogRef<HeroDialog>, public config: MdDialogConfig){
         //this.hero = config.data;
     }
     ngOnInit(){
-        this.hero = this.dialogRef.config.data;
+        this.hero = this.dialogRef.componentInstance.hero;
+        //this.hero = this.config.data;
     }
 }
