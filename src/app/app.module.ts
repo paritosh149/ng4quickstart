@@ -14,6 +14,7 @@ import { MaterialModule } from '@angular/material';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
 import { HeroDialog } from './components/hero-dialog/hero-dialog.component';
+
 import 'hammerjs';
 
 @NgModule({
@@ -29,7 +30,7 @@ import 'hammerjs';
                   HeroDetailComponent, 
                   AppComponent, 
                   DashboardComponent,
-                  HeroDialog
+                  HeroDialog,
                 ],
   bootstrap:    [ AppComponent,
                   

@@ -69,3 +69,11 @@ body, input[text], button {
   position: fixed !important;
   top: 0px;
 }
+.mat-chip:not(.mat-basic-chip).left{
+  border-radius:24px 0px 0px 24px !important;
+  margin: 0px !important;
+}
+.mat-chip:not(.mat-basic-chip).right{
+  border-radius:0px 24px 24px 0px !important;
+  margin: 0px !important;
+}
